@@ -8,6 +8,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { WinesModule } from './wines/wines.module';
+import { CountriesModule } from './countries/countries.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { WinesModule } from './wines/wines.module';
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
     WinesModule,
+    CountriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

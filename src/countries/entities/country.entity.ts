@@ -1,19 +1,18 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Country } from 'src/countries/entities/country.entity';
-import { WineColorEnum } from 'src/enums/wine';
+import { Wine } from 'src/wines/entities/wine.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
 @ObjectType()
-export class Wine {
+export class Country {
   // Propriétés
   @PrimaryGeneratedColumn()
   @Field(() => Int)
@@ -23,42 +22,12 @@ export class Wine {
   name: string;
 
   @Column()
-  appellation: string;
-
-  @Column()
-  domain: string;
-
-  @Column()
-  region: string;
-
-  @Column()
-  year: number;
-
-  @Column()
-  color: WineColorEnum;
-
-  @Column()
-  price: number;
-
-  @Column()
-  biologic: boolean;
-
-  @Column()
-  bestAfter: number;
-
-  @Column()
-  bestBefore: number;
-
-  @Column()
-  quantity: number;
+  flag: string;
 
   // Relations
-
-  // Pays
-  @ManyToOne(() => Country, (country) => country.wines)
-  country: Country;
-
-  // user:User
+  // Vins
+  @OneToMany(() => Wine, (wine) => wine.country /* , { nullable: true } */)
+  wines?: Wine[];
 
   // Timestamp
   @CreateDateColumn({

@@ -3,6 +3,7 @@ import { WineColorEnum } from 'src/enums/wine';
 
 @InputType()
 export class CreateWineInput {
+  // Propriétés
   name: string;
   appellation: string;
   domain: string;
@@ -14,4 +15,7 @@ export class CreateWineInput {
   bestAfter: number;
   bestBefore: number;
   quantity: number;
+
+  // Relations
+  countryId: number;
 }
