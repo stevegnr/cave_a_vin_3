@@ -1,7 +1,17 @@
-import { InputType, Int, Field } from '@nestjs/graphql';
+import { InputType } from '@nestjs/graphql';
+import { WineColorEnum } from 'src/enums/wine';
 
 @InputType()
 export class CreateWineInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  name: string;
+  appellation: string;
+  domain: string;
+  region: string;
+  year: number;
+  color: WineColorEnum;
+  price: number;
+  biologic: boolean;
+  bestAfter: number;
+  bestBefore: number;
+  quantity: number;
 }

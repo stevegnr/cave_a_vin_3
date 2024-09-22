@@ -6,6 +6,6 @@ async function bootstrap() {
   const port = 3000;
   await app.listen(port);
 
-  console.log(`Serveur démarré : http://localhost:${port}`);
+  console.log(`🚀 Serveur démarré : http://localhost:${port} 🚀`);
 }
 bootstrap();
