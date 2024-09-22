@@ -56,7 +56,7 @@ export class Wine {
 
   // Pays
   @ManyToOne(() => Country, (country) => country.wines)
-  country: Country;
+  country?: Country;
 
   // user:User
 
