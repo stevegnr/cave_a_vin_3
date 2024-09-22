@@ -7,7 +7,9 @@
     ".git/objects",
     ".vscode",
     ".vscode-insiders",
-    "package.json"
+    "package.json",
+    "nest-cli.json"
   ],
-  "cSpell.words": ["typeorm"]
+  "cSpell.words": ["typeorm"],
+  "cSpell.language": "en,fr"
 }
